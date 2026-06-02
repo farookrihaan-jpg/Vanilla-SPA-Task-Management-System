@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS taskmanager
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+
+USE taskmanager;
+
+CREATE TABLE IF NOT EXISTS tasks (
+  id          INT           NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  title       VARCHAR(500)  NOT NULL,
+  status      TINYINT(1)    NOT NULL DEFAULT 0,
+  created_at  TIMESTAMP     NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
